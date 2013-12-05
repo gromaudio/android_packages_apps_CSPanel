@@ -6,13 +6,13 @@
     <string-array
         name="cs_settings_names">
         <item>Top Default Application</item>
-        <item>Bottom Default Application</item>
+        <!-- <item>Bottom Default Application</item> -->
         <item>Startup</item>
     </string-array>
     <string-array
         name="cs_settings_icons">
         <item>@drawable/select_top_app</item>
-        <item>@drawable/select_bottom_app</item>
+        <!-- <item>@drawable/select_bottom_app</item> -->
         <item>@drawable/launch_cs_on_boot</item>
     </string-array>
     <string name="cs_boot_radio_yes">Yes</string>

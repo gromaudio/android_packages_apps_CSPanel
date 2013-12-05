@@ -6,6 +6,7 @@
     android:background="@drawable/cs_bg"
     android:id="@+id/cs_parent"
     >
+<!-- DISABLED
 	<LinearLayout android:id="@+id/content"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
@@ -29,7 +30,7 @@
 		android:layout_height="wrap_content"
 		android:scaleType="fitXY"
 		android:layout_alignParentBottom="true"
-		android:layout_marginBottom="80dp"
+		android:layout_marginBottom="40dp"
 		android:layout_marginLeft="4dip"
 	/>
 	<ImageView android:id="@+id/cs_close"
@@ -38,21 +39,39 @@
 		android:layout_height="wrap_content"
 		android:scaleType="fitXY"
 		android:layout_alignParentBottom="true"
-		android:layout_marginBottom="30dp"
+		android:layout_marginBottom="10dp"
 		android:layout_marginLeft="4dip"
 	/>
+DISABLED -->
 	<ImageButton android:id="@+id/cs_app_header1"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:background="@drawable/cs_app_header_focused"
-		android:layout_marginLeft="38dip"
+		android:background="@drawable/cs_app_header_unfocused"
+		android:layout_marginLeft="0dip"
 	/>
-	<TextView android:id="@+id/cs_app1_title"
+<!--Display:1280x800-->
+<!-- <TextView android:id="@+id/cs_app1_title"
 		android:layout_width="200dp"
 		android:layout_height="wrap_content"
 		android:text="@string/empty_str"
 		android:layout_marginTop="2dip"
 		android:layout_marginLeft="55dip"
+		android:textStyle="bold"
+		android:gravity="center_vertical"
+		android:textSize="16sp"
+		android:singleLine="true"
+		android:textColor="#ffffff"
+		android:ellipsize="end"
+	/> -->
+<!--Display:640x240-->
+	<!-- 1 + 7 = 45dip -->
+<!-- DISABLED
+	<TextView android:id="@+id/cs_app1_title"
+		android:layout_width="200dp"
+		android:layout_height="wrap_content"
+		android:text="@string/empty_str"
+		android:layout_marginTop="2dip"
+		android:layout_marginLeft="8dip"
 		android:textStyle="bold"
 		android:gravity="center_vertical"
 		android:textSize="16sp"
@@ -67,7 +86,7 @@
 		android:layout_alignParentRight="true"
 		android:layout_marginRight="10dp"
 	/>
-
+DISABLED -->
 <!--Display:1024x600-->
 <!--	<ImageButton android:id="@+id/cs_app_header2"
 		android:layout_width="fill_parent"
@@ -87,14 +106,25 @@
 		android:layout_marginLeft="38dip"
 	/> -->
 <!--Display:1280x800-->
-	<ImageButton android:id="@+id/cs_app_header2"
+<!-- <ImageButton android:id="@+id/cs_app_header2"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:background="@drawable/cs_app_header_unfocused"
 		android:layout_alignParentTop="true"
 		android:layout_marginTop="376dip"
 		android:layout_marginLeft="38dip"
+	/> -->
+<!--Display:640x240-->
+<!-- DISABLED
+	<ImageButton android:id="@+id/cs_app_header2"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/cs_app_header_unfocused"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="121dip"
+		android:layout_marginLeft="38dip"
 	/>
+DISABLED -->
 <!--Display:1024x600-->
 <!--	<TextView android:id="@+id/cs_app2_title"
 		android:layout_width="200dp"
@@ -124,7 +154,7 @@
 		android:ellipsize="end"
 	/> -->
 <!--Display:1280x800-->
-	<TextView android:id="@+id/cs_app2_title"
+<!-- <TextView android:id="@+id/cs_app2_title"
 		android:layout_width="200dp"
 		android:layout_height="wrap_content"
 		android:text="@string/empty_str"
@@ -136,7 +166,23 @@
 		android:singleLine="true"
 		android:textColor="#cccccc"
 		android:ellipsize="end"
+	/> -->
+<!--Display:640x240-->
+<!-- DISABLED
+	<TextView android:id="@+id/cs_app2_title"
+		android:layout_width="120dp"
+		android:layout_height="wrap_content"
+		android:text="@string/empty_str"
+		android:layout_marginTop="122dip"
+		android:layout_marginLeft="55dip"
+		android:textStyle="bold"
+		android:gravity="center_vertical"
+		android:textSize="12sp"
+		android:singleLine="true"
+		android:textColor="#cccccc"
+		android:ellipsize="end"
 	/>
+DISABLED -->
 <!--Display:1024x600-->
 <!--	<ImageButton android:id="@+id/launch_1_button"
 		android:layout_width="wrap_content"
@@ -156,12 +202,23 @@
 		android:layout_marginTop="360dip"
 	/> -->
 <!--Display:1280x800-->
-	<ImageButton android:id="@+id/launch_1_button"
+<!-- <ImageButton android:id="@+id/launch_1_button"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:background="@drawable/control_applaunch_unfocused"
 		android:layout_alignParentRight="true"
 		android:layout_marginRight="10dp"
 		android:layout_marginTop="376dip"
+	/> -->
+<!--Display:640x240-->
+<!-- DISABLED
+	<ImageButton android:id="@+id/launch_1_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/control_applaunch_unfocused"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="10dp"
+		android:layout_marginTop="121dip"
 	/>
+DISABLED -->
 </RelativeLayout>

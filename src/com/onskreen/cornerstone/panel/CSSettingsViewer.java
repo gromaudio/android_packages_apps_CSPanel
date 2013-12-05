@@ -28,7 +28,7 @@ public class CSSettingsViewer extends Fragment{
     private ArrayList apps = new ArrayList();
     private ArrayList packages = new ArrayList();
     private ViewStub csTopApp;
-    private ViewStub csBottomApp;
+//    private ViewStub csBottomApp;
     private ViewStub csLaunch;
     private boolean isInitialized = false;
     static final String CS_PREFS = "CSPrefs";
@@ -63,13 +63,13 @@ public class CSSettingsViewer extends Fragment{
 			final SharedPreferences.Editor editor = settingsPref.edit();
 
 			String panel0 = settingsPref.getString("panel0", null);
-			String panel1 = settingsPref.getString("panel1", null);
+//			String panel1 = settingsPref.getString("panel1", null);
 			boolean startup = settingsPref.getBoolean("startup", fa.getResources().getBoolean(R.bool.startup));
 
 			csTopApp = (ViewStub) fa.findViewById(R.id.cs_top_app);
 			csTopApp.inflate();
-			csBottomApp = (ViewStub) fa.findViewById(R.id.cs_bottom_app);
-			csBottomApp.inflate();
+//			csBottomApp = (ViewStub) fa.findViewById(R.id.cs_bottom_app);
+//			csBottomApp.inflate();
 			csLaunch = (ViewStub) fa.findViewById(R.id.cs_launch);
 			csLaunch.inflate();
 
@@ -86,28 +86,28 @@ public class CSSettingsViewer extends Fragment{
 			});
 			topList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-			ArrayAdapter bottomAd = new ArrayAdapter(ctx, android.R.layout.simple_list_item_single_choice, apps);
-			final ListView bottomList = (ListView) fa.findViewById(R.id.cs_bottom_app_list);
-			bottomList.setAdapter(bottomAd);
-			bottomList.setOnItemClickListener(new OnItemClickListener(){
-				public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
-					//showToast((String)apps.get(arg2));
-					editor.putString("panel1", (String)packages.get(arg2));
-					// Commit the edits!
-					editor.commit();
-				}
-			});
-			bottomList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+//			ArrayAdapter bottomAd = new ArrayAdapter(ctx, android.R.layout.simple_list_item_single_choice, apps);
+//			final ListView bottomList = (ListView) fa.findViewById(R.id.cs_bottom_app_list);
+//			bottomList.setAdapter(bottomAd);
+//			bottomList.setOnItemClickListener(new OnItemClickListener(){
+//				public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
+//					//showToast((String)apps.get(arg2));
+//					editor.putString("panel1", (String)packages.get(arg2));
+//					// Commit the edits!
+//					editor.commit();
+//				}
+//			});
+//			bottomList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			isInitialized = true;
 
 			int pos = packages.indexOf(panel0);
 			if(pos != -1){
 				topList.setItemChecked(pos, true);
 			}
-			pos = packages.indexOf(panel1);
-			if(pos != -1){
-				bottomList.setItemChecked(pos, true);
-			}
+//			pos = packages.indexOf(panel1);
+//			if(pos != -1){
+//				bottomList.setItemChecked(pos, true);
+//			}
 
 			final RadioButton yesRB = (RadioButton) fa.findViewById(R.id.radio0);
 			yesRB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -140,16 +140,16 @@ public class CSSettingsViewer extends Fragment{
 
 		if(index == 0) {
 			csTopApp.setVisibility(View.VISIBLE);
-			csBottomApp.setVisibility(View.INVISIBLE);
+//			csBottomApp.setVisibility(View.INVISIBLE);
 			csLaunch.setVisibility(View.INVISIBLE);
 		} else if(index == 1) {
-			csBottomApp.setVisibility(View.VISIBLE);
+//			csBottomApp.setVisibility(View.VISIBLE);
 			csTopApp.setVisibility(View.INVISIBLE);
 			csLaunch.setVisibility(View.INVISIBLE);
 		}else if(index == 2) {
 			csLaunch.setVisibility(View.VISIBLE);
 			csTopApp.setVisibility(View.INVISIBLE);
-			csBottomApp.setVisibility(View.INVISIBLE);
+//			csBottomApp.setVisibility(View.INVISIBLE);
 		}
     }
 

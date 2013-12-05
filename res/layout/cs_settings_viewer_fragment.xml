@@ -13,13 +13,14 @@
         android:layout_height="fill_parent"
         android:visibility="visible" />
 
-    <ViewStub
+<!-- <ViewStub
         android:id="@+id/cs_bottom_app"
         android:inflatedId="@+id/show_bottom_app"
         android:layout="@layout/cs_bottom_app_view_stub"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:visibility="invisible" />
+ -->
 
     <ViewStub
         android:id="@+id/cs_launch"
