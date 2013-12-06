@@ -6,7 +6,9 @@ import android.app.ActivityManagerNative;
 import android.app.ICornerstoneManager;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -30,7 +32,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.graphics.Color;
 import android.content.ComponentName;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Log;
 
 //import java.lang.SecurityException;
@@ -71,8 +72,7 @@ public class CSPanel extends Activity {
 		OPEN,
 		CLOSED
     }
-    //Begins in expanded state
-    Cornerstone_State csState = Cornerstone_State.OPEN;
+    static Cornerstone_State csState = Cornerstone_State.OPEN; // Begins in expanded state
 
     /**
      * Author: Onskreen
@@ -172,8 +172,7 @@ public class CSPanel extends Activity {
 //        if(panel0 == null && panel1 == null){
         if(panel0 == null){
             SharedPreferences.Editor editor = settings.edit();
-//            editor.putString("panel0", "com.android.email");
-            editor.putString("panel0", "com.android.calculator2");
+            editor.putString("panel0", "com.onskreen.cornerstone.camera");
 //            editor.putString("panel1", "com.android.browser");
             // Commit the edits!
             editor.commit();
@@ -500,26 +499,44 @@ public class CSPanel extends Activity {
 	 * collapse/expand the CS panel. By default, the panel will be in
 	 * expanded mode.
 	 */
-	public void togglePanel(View view) {
-//		if((csHandler == (ImageButton)view) && (csState == Cornerstone_State.OPEN)){
-//			try {
-//				ActivityManagerNative.getDefault().setCornerstoneState(false);
-//			} catch (RemoteException e) {
-//				e.printStackTrace();
-//			}
-//			csHandler.setBackgroundResource(R.drawable.cornerstone_panel_controller_collapsed);
-//			csState = Cornerstone_State.CLOSED;
-//		} else if((csHandler == (ImageButton)view) && (csState == Cornerstone_State.CLOSED)){
-//			try {
-//				ActivityManagerNative.getDefault().setCornerstoneState(true);
-//			} catch (RemoteException e) {
-//				e.printStackTrace();
-//			}
-//			csHandler.setBackgroundResource(R.drawable.cornerstone_panel_controller_expanded);
-//			csState = Cornerstone_State.OPEN;
-//		}
+    public void togglePanel(View view) {
+        //		if((csHandler == (ImageButton)view) && (csState == Cornerstone_State.OPEN)){ 
+        //			try {
+        //				ActivityManagerNative.getDefault().setCornerstoneState(false);
+        //			} catch (RemoteException e) {
+        //				e.printStackTrace();
+        //			}
+        //			csHandler.setBackgroundResource(R.drawable.cornerstone_panel_controller_collapsed);
+        //			csState = Cornerstone_State.CLOSED;
+        //		} else if((csHandler == (ImageButton)view) && (csState == Cornerstone_State.CLOSED)){
+        //			try {
+        //				ActivityManagerNative.getDefault().setCornerstoneState(true);
+        //			} catch (RemoteException e) {
+        //				e.printStackTrace();
+        //			}
+        //			csHandler.setBackgroundResource(R.drawable.cornerstone_panel_controller_expanded);
+        //			csState = Cornerstone_State.OPEN;
+        //		}
 	}
 
+    public static void togglePanel() {
+        if (csState == Cornerstone_State.OPEN) {
+            try {
+                ActivityManagerNative.getDefault().setCornerstoneState(false);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            csState = Cornerstone_State.CLOSED;
+        } else if (csState == Cornerstone_State.CLOSED) {
+            try {
+                ActivityManagerNative.getDefault().setCornerstoneState(true);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            csState = Cornerstone_State.OPEN;
+        }
+        Log.v(TAG, "Cornerstone panels toggled with status " + csState);
+    }
 
 	/**
 	 * Author: Onskreen
