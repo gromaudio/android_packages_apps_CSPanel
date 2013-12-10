@@ -176,8 +176,7 @@ public class CSPanel extends Activity {
 //            editor.putString("panel1", "com.android.browser");
             // Commit the edits!
             editor.commit();
-//            panel0 = "com.android.email";
-            panel0 = "com.android.calculator2";
+            panel0 = "com.onskreen.cornerstone.camera";
 //            panel1 = "com.android.browser";
         }
 
