@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentActivity;
 
 public class CSSettings extends FragmentActivity implements
 CSSettingsList.ListItemSelectedListener{
-    static final String CS_PREFS = "CSPrefs";
+	static final String CS_PREFS = "CSPrefs";
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {

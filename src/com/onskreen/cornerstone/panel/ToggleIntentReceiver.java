@@ -13,6 +13,7 @@ public class ToggleIntentReceiver extends BroadcastReceiver {
         if (CSPanel.isCornestoneStarted) {
             CSPanel.togglePanel();
         }
+
         Log.v(TAG, "Intent received");
 	}
 }
